@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url("../atributtes/images/login.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 90px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 200px;
+            margin-bottom: 250px;
+            margin-left: 550px;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .switch {
+            margin-top: 20px;
+        }
+
+        header {
+            background-color: #85bf4b;
+            color: #ffff;
+            padding: 1em;
+            text-align: center;
+            width: 97.5%;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: left;
+        }
+
+        nav {
+            background-color: #50bfbf;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #ffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            font-size: 15px;
+            font-style: bold;
+
+        }
+
+        nav a:hover {
+            background-color: #00000048;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../atributtes/images/icon1.png" style="height: 50px;width: auto; float: left; margin-right: 10px;">
+        <h1>Budget Tracker</h1>
+    </header>
+
+    <nav class="clearfix">
+        <a href="../index.html">Home</a>
+        <a href="../pages/signup.html">Budget planning</a>
+        <a href="../pages/savingGoles.html">SavingGoles</a>
+        <a href="../pages/Aboutus.html">About</a>
+        <a href="../pages/ContactUs.html">ContactUs</a>
+    </nav><br>
+
+    <form id="forgotPasswordForm" onsubmit="return verifyAndRedirect()" action="../pages/confirmation.html">
+        <h2>Forgot Password</h2>
+        <p>Enter your email address to reset your password.</p>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="button" onclick="sendOTP()">Verify</button>
+        <label for="OTP">OTP:</label>
+        <input type="text" id="OTP" name="OTP" required>
+
+        <button type="submit">Reset Password</button>
+    </form>
+
+    <script>
+        function sendOTP() {
+            // Add logic to send OTP to the entered email address
+            alert("OTP sent successfully!");
+        }
+
+        function verifyAndRedirect() {
+            var enteredOTP = document.getElementById('OTP').value;
+
+            // Add logic to verify the entered OTP
+            if (enteredOTP === '123456') { // Replace '123456' with the actual OTP
+                alert("OTP verification successful!");
+                window.location.replace = "D:\BudgetTrackerProject\pages\signup.html";
+
+                return true;
+            } else {
+                alert("Invalid OTP. Please try again.");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
